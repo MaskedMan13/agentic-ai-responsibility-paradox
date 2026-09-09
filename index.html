@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Responsibility Paradox — Who answers when an AI agent acts?</title>
+<meta name="description" content="An interactive explainer of 'The Responsibility Paradox: Toward Value-Chain Accountability for Agentic AI' — how power over AI agents flows upstream while accountability is pushed downstream, with the actual contract language from OpenAI, Anthropic, Microsoft, Google and DeepSeek.">
+<meta property="og:title" content="The Responsibility Paradox">
+<meta property="og:description" content="Who answers when an AI agent acts? The actors with the most power to prevent harm carry the least formal obligation.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23FBBF24'/%3E%3Cstop offset='1' stop-color='%23EF4444'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><i></i> The Responsibility Paradox</a>
+    <div class="navlinks">
+      <a href="#anatomy">Anatomy</a>
+      <a href="#matrix">Who holds what</a>
+      <a href="#lifecycle">Where risk is born</a>
+      <a href="#paradox">The paradox</a>
+      <a href="#providers">Five providers</a>
+      <a href="#terms">The contracts</a>
+      <a href="#governance">Governance</a>
+      <a href="#proposal">The fix</a>
+    </div>
+  </div>
+</nav>
+<div class="progress" id="progress"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">An interactive explainer · UMass Amherst</div>
+        <h1>
+          <span class="l1">The Responsibility <span class="grad">Paradox</span></span>
+          <span class="l2">Who answers when an AI agent acts?</span>
+        </h1>
+        <p class="lead">AI systems no longer just answer questions — they book, buy, write, code and act on our behalf. When something goes wrong, who is responsible? The paper this site explains found a structural distortion: <strong>the actors with the most power to prevent harm carry the least formal obligation</strong> — and the contracts you agree to are where that distortion is written down.</p>
+        <div class="cta">
+          <a class="btn primary" href="#anatomy">Explore the findings ↓</a>
+          <a class="btn" href="#terms">Read the actual contract language</a>
+        </div>
+        <p class="credits">Based on <em>The Responsibility Paradox: Toward Value-Chain Accountability for Agentic AI</em> by <a href="https://www.umass.edu/public-policy/about/directory/carolina-rossini" target="_blank" rel="noopener">Carolina A. Rossini</a> and <a href="https://www.linkedin.com/in/vinit-prakash1312" target="_blank" rel="noopener">Vinit Prakash</a>, University of Massachusetts Amherst.</p>
+      </div>
+
+      <div class="paradox rv" id="paradoxViz">
+        <div class="title"><span>The AI value chain</span><span>upstream → downstream</span></div>
+        <div class="chain">
+          <div class="actor" style="--c:var(--provider)">Provider<small>builds the model</small></div>
+          <div class="actor" style="--c:var(--developer)">Developer<small>builds the agent</small></div>
+          <div class="actor" style="--c:var(--deployer)">Deployer<small>puts it to work</small></div>
+          <div class="actor" style="--c:var(--user)">User<small>sets the goal</small></div>
+        </div>
+        <div class="bars">
+          <div class="bar power">
+            <div class="lab"><b>Capability · knowledge · profit · power to prevent harm</b><span>concentrates upstream</span></div>
+            <div class="track"><div class="fill"></div></div>
+            <div class="ticks"><span>most</span><span></span><span></span><span>least</span></div>
+          </div>
+          <div class="bar account">
+            <div class="lab"><b>Formal accountability under the contracts</b><span>pushed downstream</span></div>
+            <div class="track"><div class="fill"></div></div>
+            <div class="ticks"><span>least</span><span></span><span></span><span>most</span></div>
+          </div>
+        </div>
+        <div class="verdict"><b>The paradox:</b> formal accountability runs <em>inversely</em> to the capacity to prevent harm.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ FROM ANSWERING TO ACTING ============ -->
+<section id="shift">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">What changed</div>
+      <h2>From <span class="ital">answering</span> to <span class="ital">acting</span></h2>
+      <p class="lead">For a decade, AI governance worried about systems that recommended, predicted, and generated — but always left a human to decide. Agentic AI removes that human from the loop, step by step.</p>
+    </div>
+    <div class="shift rv d1">
+      <div class="card">
+        <div class="who">Yesterday · a chatbot</div>
+        <h3>It says things.</h3>
+        <p>Answers a prompt. Generates text, a classification, a recommendation. A person reads it and decides what to do.</p>
+        <ul><li>Risk: the information may be wrong</li><li>Governance question: is the <em>output</em> accurate and fair?</li></ul>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card" style="border-color:rgba(249,115,22,.45)">
+        <div class="who">Today · an agent</div>
+        <h3>It does things.</h3>
+        <p>Pursues a goal over many steps. Browses, runs code, sends the email, moves the money, changes the database — with limited human supervision.</p>
+        <ul><li>Risk: the action may cause real-world harm</li><li>Governance question: who is accountable for the <em>operation</em>?</li></ul>
+      </div>
+    </div>
+    <blockquote class="quote-block rv d2">“Responsibility does not disappear in such systems; it fragments, attaching partially to each actor and fully to none.”
+      <cite>— Rossini &amp; Prakash, <em>The Responsibility Paradox</em></cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ ANATOMY ============ -->
+<section id="anatomy">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">Inside an agent</div>
+      <h2>Architecture is <span class="ital">accountability</span></h2>
+      <p class="lead">An AI agent is built from eight parts. Each part can fail in its own way — and each failure traces back to a different actor. Click a component to see who owns what goes wrong there.</p>
+    </div>
+    <div class="anatomy rv d1">
+      <div class="comp-grid" id="compGrid"></div>
+      <div class="detail" id="compDetail"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATRIX ============ -->
+<section id="matrix">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">Six tests, four actors</div>
+      <h2>Who actually holds the <span class="ital">power</span>?</h2>
+      <p class="lead">The paper scores each actor against six criteria that legal and ethical theory use to assign responsibility. Hover a criterion for what it means. Notice where the heat concentrates.</p>
+    </div>
+    <div class="rv d1">
+      <div class="matrix-scroll"><div class="matrix" id="matrixGrid"></div></div>
+      <div class="crit-note" id="critNote"><b>Read the columns, not the cells.</b> The provider column glows on nearly every test. Risk creation is the one criterion where providers, developers and deployers all rate high — risk is genuinely shared. Everything else concentrates upstream.</div>
+      <div class="criteria-list" id="critList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIFECYCLE ============ -->
+<section id="lifecycle">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">Across the lifecycle</div>
+      <h2>Where risk is <span class="ital">born</span> vs. where it gets <span class="ital">blamed</span></h2>
+      <p class="lead">Sixteen classes of agentic risk, plotted from the stage where each originates (filled dot) to the stage where it is usually caught and mitigated (open dot). Hover any row. The pattern is the paper's central evidence: <strong>the point where a risk is born is rarely the point where it becomes visible.</strong></p>
+    </div>
+    <div class="rv d1">
+      <div class="plot-wrap" id="plot"></div>
+      <div class="legend">
+        <span><i class="f"></i> stage where the risk originates</span>
+        <span><i class="o"></i> stage where it is primarily mitigated</span>
+        <span><i class="b"></i> origin and mitigation coincide</span>
+      </div>
+      <div class="risk-tip" id="riskTip"><b>Hover a risk.</b> The risks rooted in the model itself — reasoning failure, misalignment, deception, emergence — all begin at data, pretraining and alignment stages that only the provider controls, yet they surface during testing and live operation, where the deployer or user is expected to manage them.</div>
+    </div>
+    <div class="two-risks rv d2">
+      <div class="card" style="--c:var(--provider)">
+        <div class="eyebrow" style="margin-bottom:.6rem">Capability-level risk</div>
+        <h3>Comes from the model itself</h3>
+        <p>Its trained tendencies to err, mislead, or act in unintended ways. Only the developer of the model can observe and correct these. A deployer can monitor for them and contain the damage — but cannot reach the cause.</p>
+      </div>
+      <div class="card" style="--c:var(--user)">
+        <div class="eyebrow" style="margin-bottom:.6rem">Deployment-level risk</div>
+        <h3>Comes from how it's set up</h3>
+        <p>How a particular user configures and authorizes an agent in a particular environment. Here the user or deployer usually <em>is</em> the best-placed party. Pushing this risk downstream is defensible.</p>
+      </div>
+    </div>
+    <p class="lead rv d3" style="margin-top:1.6rem"><strong>The problem:</strong> provider contracts shift <em>both</em> kinds of risk downstream in one sweep — including the capability-level risk no user can inspect or repair.</p>
+  </div>
+</section>
+
+<!-- ============ THE PARADOX ============ -->
+<section id="paradox">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">The idea</div>
+      <h2>Naming the <span class="ital">paradox</span></h2>
+    </div>
+    <div class="definition rv d1">
+      The actors that create foundational AI capabilities, possess the greatest knowledge of systemic risks, derive substantial economic benefit, and maintain the strongest capacity to mitigate harm frequently retain comparatively limited formal accountability through contractual and governance arrangements.
+      <small>The responsibility paradox, as defined in the paper</small>
+    </div>
+    <div class="contrast rv d2">
+      <div class="card"><b>The problem of many hands</b><p>When many actors contribute to an outcome, it's hard to say who is morally responsible. <span class="muted">(Thompson, 1980)</span></p></div>
+      <div class="card"><b>The moral crumple zone</b><p>Blame for a complex automated system's failure lands on the human nearest the harm — the operator with the least control. <span class="muted">(Elish, 2019)</span></p></div>
+      <div class="card hl"><b>The responsibility paradox</b><p>Something more specific: formal accountability correlates <em>inversely</em> with the capacity to prevent harm. The most powerful actors carry the least obligation; obligation piles up where the power to prevent harm is weakest.</p></div>
+    </div>
+    <div class="grid-2 rv d3" style="margin-top:2.6rem">
+      <div>
+        <h3 style="margin-bottom:.6rem">How it came to be</h3>
+        <div class="steps">
+          <div class="step"><div><b>Foundation models split creation from deployment.</b><span>One model now powers thousands of applications — which lets providers argue that risk is best managed downstream.</span></div></div>
+          <div class="step"><div><b>Competition rewards capability, not accountability.</b><span>Providers race to expand autonomy and tool use, while limiting legal exposure by contract. Capability expands; accountability retrenches.</span></div></div>
+          <div class="step"><div><b>Regulation lags.</b><span>Most legal frameworks weren't built for agents — so contracts, not public law, do the allocating.</span></div></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:.6rem">Why it matters</h3>
+        <div class="steps">
+          <div class="step"><div><b>Distorted incentives</b><span>If you can externalize the risk, why invest in safety?</span></div></div>
+          <div class="step"><div><b>Information asymmetry</b><span>Downstream actors are asked to manage risks they can't see.</span></div></div>
+          <div class="step"><div><b>An accountability gap</b><span>Responsibility fragments — and the costs land hardest on those least able to contest them.</span></div></div>
+          <div class="step"><div><b>Public trust</b><span>Trust depends on being able to say who answers when harm occurs.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE CASE ============ -->
+<section id="case">
+  <div class="wrap">
+    <div class="grid-2">
+      <div class="rv">
+        <div class="eyebrow">A real case · July 2026</div>
+        <h2>The Hugging Face <span class="ital">breach</span></h2>
+        <p class="lead" style="margin-top:1rem">These risks are no longer hypothetical. In July 2026 an autonomous agent system carried out a cyberattack end to end — and the aftermath rehearsed in public exactly the questions this paper asks in theory.</p>
+        <div class="point"><b>Why it matters for the paradox:</b> the incident originated entirely inside the provider's own infrastructure, before any deployment. The harm fell on a third party. There is no deployer and no user to whom responsibility could plausibly be assigned.</div>
+        <p class="small muted" style="margin-top:1rem">Sources: OpenAI (2026, July 21), “OpenAI and Hugging Face partner to address security incident during model evaluation”; Ha (2026, July 26), TechCrunch.</p>
+      </div>
+      <div class="tl rv d1" id="timeline"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROVIDERS ============ -->
+<section id="providers">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">The evidence · comparative analysis</div>
+      <h2>Five providers, <span class="ital">one</span> allocation</h2>
+      <p class="lead">The paper read the contracts of OpenAI, Anthropic, Microsoft, Google and DeepSeek across five dimensions. The vocabulary differs enormously. The destination of liability does not. Pick a provider.</p>
+    </div>
+    <div class="rv d1">
+      <div class="tabs" id="provTabs"></div>
+      <div class="prov" id="provPanel"></div>
+    </div>
+
+    <div class="rv d2">
+      <div class="vocab" id="vocab"></div>
+      <p class="small muted" style="margin-top:.8rem">Naming changes the honesty of the disclosure — not the destination of the liability. The disclaimer works whether the conduct is called an “Action,” an “AI Agent,” or merely “Output.”</p>
+    </div>
+
+    <div class="alloc rv d2">
+      <table class="t" id="allocTable"></table>
+    </div>
+
+    <div class="finding rv d3">
+      <h3>The clearest finding: safety talk and liability terms move independently</h3>
+      <p>Anthropic, Microsoft and Google publish detailed safety and governance material; OpenAI publishes extensively; DeepSeek publishes little. Across that entire range, the contractual allocation barely changes. Public governance maturity and legal accountability are, in this sample, <strong>decoupled</strong> — doing more visible safety work does not correspond to keeping more responsibility. That matters because governance maturity is often read as a proxy for accountability. Here it is not one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TERMS EXPLORER ============ -->
+<section id="terms">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">The contracts · Annex T1</div>
+      <h2>Read what you <span class="ital">actually</span> agreed to</h2>
+      <p class="lead">Eighteen documents from eight providers, coded against a shared scheme. Every quotation below is verbatim from the document, as published or effective as of July 2026, with its version and a link to the source. Filter by provider or search the language.</p>
+    </div>
+    <div class="rv d1">
+      <div class="toolbar" id="touToolbar"></div>
+      <div class="count" id="touCount"></div>
+      <div class="docs" id="touDocs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GOVERNANCE ============ -->
+<section id="governance">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">The rulebooks</div>
+      <h2>Does anyone <span class="ital">fix</span> it?</h2>
+      <p class="lead">Eight governance instruments — one binding law and seven soft-law frameworks — scored on how much they ask of providers versus deployers, and whether they address the paradox at all. Click a row for the reasoning.</p>
+    </div>
+    <div class="frames rv d1" id="frames"></div>
+    <p class="lead rv d2" style="margin-top:1.8rem">The pattern is consistent: most frameworks are highly developed on <em>deployment</em> governance, and thin on foundation-model governance, information asymmetry and capability creation. Even the two instruments written specifically for agents — Singapore's IMDA framework and the Five Eyes security guidance — name the upstream actors and then hand the job of managing them to the deployer.</p>
+  </div>
+</section>
+
+<!-- ============ TAXONOMY ============ -->
+<section id="taxonomy">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">Reference · Annex T2</div>
+      <h2>A map of agentic <span class="ital">risk</span></h2>
+      <p class="lead">Seven tiers of risk synthesized from the Five Eyes guidance and Singapore's IMDA framework — what each looks like, how fully each source treats it, and the preferred mitigation. Both regimes lean toward deterministic, structural controls over prompt-layer instructions.</p>
+    </div>
+    <div class="tax rv d1" id="tax"></div>
+  </div>
+</section>
+
+<!-- ============ PROPOSAL ============ -->
+<section id="proposal">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">The fix</div>
+      <h2>Value-chain <span class="ital">accountability</span></h2>
+      <p class="lead">The answer is neither to dump all responsibility on providers nor to keep the deployer-centric status quo. It is to make responsibility <strong>track influence</strong> — so the actors who create capabilities, hold the best information, capture the largest benefits and can most cheaply prevent harm carry obligations to match.</p>
+    </div>
+    <div class="imps rv d1" id="imps"></div>
+    <div class="rebalance rv d2">
+      <div class="title">Split the two risks — and hold each actor to the share it can actually govern</div>
+      <div class="chain">
+        <div class="actor" style="--c:var(--provider)">Provider<small>training · alignment · release</small></div>
+        <div class="actor" style="--c:var(--developer)">Developer<small>architecture · tools · memory</small></div>
+        <div class="actor" style="--c:var(--deployer)">Deployer<small>context · permissions · oversight</small></div>
+        <div class="actor" style="--c:var(--user)">User<small>goals · instructions</small></div>
+      </div>
+      <p style="color:var(--ink-2);margin:1rem 0 0">Tie provider obligations to the decisions the provider controls — training, alignment and release — and they become <em>auditable</em>, because those decisions leave a record. Everything downstream stays with the actors who genuinely control it. What the field still lacks is a reliable way to measure and audit what agents actually do, so that responsibility, once assigned, can be checked.</p>
+    </div>
+    <blockquote class="quote-block rv d3">“Whether AI will act is no longer the question, because it already does. What remains is to make sure responsibility keeps pace.”
+      <cite>— closing line of the paper</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="intro rv">
+      <div class="eyebrow">About this project</div>
+      <h2>The people &amp; the method</h2>
+      <p class="lead">This site is a visual companion to a law-and-policy paper from the University of Massachusetts Amherst. It is written for a general audience; wherever contract language is quoted, it is reproduced exactly as it appears in the source document.</p>
+    </div>
+    <div class="people rv d1">
+      <a class="person" href="https://www.umass.edu/public-policy/about/directory/carolina-rossini" target="_blank" rel="noopener">
+        <div class="av">CR</div>
+        <div><b>Prof. Carolina A. Rossini</b><span>University of Massachusetts Amherst · School of Public Policy</span></div>
+      </a>
+      <a class="person" href="https://www.linkedin.com/in/vinit-prakash1312" target="_blank" rel="noopener">
+        <div class="av c">VP</div>
+        <div><b>Vinit Prakash</b><span>University of Massachusetts Amherst · co-author</span></div>
+      </a>
+    </div>
+    <div class="method rv d2">
+      <b style="color:#fff">How the study was done.</b> Four methods — normative governance analysis, comparative policy analysis, contractual document analysis and tabulation, and comparative evaluation of governance frameworks — applied to two source sets: (1) the public terms of use, service agreements and incorporated policies of eight AI providers, each coded against twelve classification dimensions; and (2) emerging governance instruments including the EU AI Act, the NIST AI RMF, the OECD AI Principles, UNESCO's Recommendation, Singapore's IMDA framework, the UK ICO foresight assessment and the Five Eyes guidance. Documents were read as published or effective as of July 2026; several took effect during 2026, so some analyzed terms are new. The study is normative rather than empirical — it does not predict how any court will rule.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Carolina A. Rossini &amp; Vinit Prakash · University of Massachusetts Amherst</span>
+    <span>Quotations are verbatim from the cited documents. This site is an explainer, not legal advice.</span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
