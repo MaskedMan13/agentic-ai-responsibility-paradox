@@ -1,6 +1,6 @@
 # The Responsibility Paradox — interactive explainer
 
-A visual companion site to **_The Responsibility Paradox: Toward Value-Chain Accountability for Agentic AI_** by Carolina A. Rossini and Vinit Prakash (University of Massachusetts Amherst).
+A visual companion site to **_The Responsibility Paradox: Toward Value-Chain Accountability for Agentic AI_** by Professor Carolina A. Rossini and Vinit Prakash (University of Massachusetts Amherst).
 
 Written for a general audience. Every quotation from a provider's terms of use is reproduced verbatim from the source document, as published or effective as of July 2026, with its version and a link to the source.
 
@@ -32,27 +32,12 @@ app.js       — rendering + interactions (no framework, no build step)
 .nojekyll    — tells GitHub Pages to serve files as-is
 ```
 
-No dependencies to install. Fonts load from Google Fonts; everything else is self-contained.
-
-## Deploy on GitHub Pages (about 2 minutes)
-
-1. Create a new **public** repository on GitHub, e.g. `responsibility-paradox`.
-2. Upload all files in this folder to the repository root (drag-and-drop in the GitHub UI works, or `git push`).
-3. In the repository go to **Settings → Pages**.
-4. Under **Build and deployment**, set **Source** to *Deploy from a branch*, pick **`main`** and **`/ (root)`**, and click **Save**.
-5. Wait ~1 minute. Your site is live at  
-   `https://<your-username>.github.io/responsibility-paradox/`
-
-Any later edit you push to `main` redeploys automatically.
-
 ### Optional: custom domain
 Settings → Pages → *Custom domain*. GitHub will add a `CNAME` file for you.
 
 ## Updating content
 
 All text and data live in `data.js` as plain JavaScript objects — you can edit a quotation, add a document to the terms explorer, or change a score without touching the layout code. The paper's own paragraph text lives in `index.html`.
-
-To link the published paper: search `index.html` for the hero's "Based on" line and the About section and add the DOI/URL when available.
 
 ## Credits
 
